@@ -1,0 +1,335 @@
+/* ---------------------------------------------------------
+   Kisanet Gabreselassie — Portfolio
+   Calm, muted, single-typeface redesign
+--------------------------------------------------------- */
+
+:root {
+	--bg: #F3F1EC;
+	--ink: #1B2A2F;
+	--ink-muted: #5C5A54;
+	--accent: #3E6478;
+	--accent-hover: #2C4C5C;
+	--hairline: rgba(27, 42, 47, 0.12);
+
+	--font: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+	--container: 42rem;
+	--gutter: clamp(1.25rem, 5vw, 3rem);
+	--section-space: clamp(4rem, 10vw, 7rem);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--ink);
+	font-family: var(--font);
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+a {
+	color: var(--accent);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus-visible {
+	color: var(--accent-hover);
+}
+
+h1, h2, h3 {
+	font-weight: 600;
+	line-height: 1.2;
+	margin: 0 0 0.75rem;
+}
+
+h1 {
+	font-size: clamp(2rem, 4vw + 1rem, 3rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+	margin-bottom: 2.5rem;
+}
+
+h3 {
+	font-size: 1.125rem;
+	font-weight: 600;
+}
+
+p {
+	margin: 0 0 1rem;
+}
+
+.container {
+	max-width: var(--container);
+	margin: 0 auto;
+	padding: 0 var(--gutter);
+}
+
+/* Nav */
+
+.site-nav {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: var(--bg);
+}
+
+.site-nav .container {
+	max-width: 52rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.75rem 1.5rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+
+.site-nav .name {
+	font-weight: 600;
+	color: var(--ink);
+	text-decoration: none;
+	font-size: 1.0625rem;
+}
+
+.site-nav .name:hover {
+	color: var(--ink);
+	text-decoration: underline;
+}
+
+.site-nav ul {
+	list-style: none;
+	display: flex;
+	gap: clamp(1rem, 3vw, 2rem);
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
+}
+
+.site-nav a {
+	color: var(--ink);
+	text-decoration: none;
+	font-size: 0.9375rem;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+	color: var(--accent);
+}
+
+/* Sections */
+
+main section {
+	padding: var(--section-space) 0;
+}
+
+main section + section {
+	border-top: 1px solid var(--hairline);
+}
+
+.eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.8125rem;
+	color: var(--ink-muted);
+	margin-bottom: 1rem;
+}
+
+/* Home */
+
+#home .lede {
+	font-size: 1.1875rem;
+	color: var(--ink-muted);
+	max-width: 34rem;
+}
+
+#home .status {
+	color: var(--ink-muted);
+	max-width: 34rem;
+}
+
+#home .links {
+	margin-top: 2rem;
+	display: flex;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+	font-size: 0.9375rem;
+}
+
+/* Projects */
+
+.project {
+	margin-bottom: 3rem;
+}
+
+.project:last-child {
+	margin-bottom: 0;
+}
+
+.project h3 {
+	margin-bottom: 0.5rem;
+}
+
+.project p {
+	color: var(--ink-muted);
+}
+
+.project .meta {
+	font-size: 0.875rem;
+	color: var(--ink-muted);
+	margin-bottom: 0;
+}
+
+.project .meta .label {
+	color: var(--ink);
+}
+
+/* About */
+
+.about-intro {
+	display: flex;
+	gap: 2rem;
+	align-items: flex-start;
+	margin-bottom: var(--section-space);
+	flex-wrap: wrap;
+}
+
+.about-intro img {
+	width: 6.5rem;
+	height: 6.5rem;
+	border-radius: 50%;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.about-intro .bio {
+	flex: 1 1 20rem;
+}
+
+.about-intro .bio p {
+	color: var(--ink-muted);
+	margin-bottom: 0;
+}
+
+.about h3.subhead {
+	font-size: 1.0625rem;
+	margin-bottom: 1.5rem;
+}
+
+.about h3.subhead + h3.subhead,
+.experience + .skills h3.subhead {
+	margin-top: 0;
+}
+
+.skills {
+	margin-top: var(--section-space);
+}
+
+.experience {
+	margin-bottom: var(--section-space);
+}
+
+.job {
+	margin-bottom: 2rem;
+}
+
+.job:last-child {
+	margin-bottom: 0;
+}
+
+.job .role {
+	font-weight: 600;
+	margin-bottom: 0.125rem;
+}
+
+.job .dates {
+	font-size: 0.875rem;
+	color: var(--ink-muted);
+	margin-bottom: 0.5rem;
+}
+
+.job p.desc {
+	color: var(--ink-muted);
+	margin-bottom: 0;
+}
+
+.skills-list {
+	color: var(--ink-muted);
+	margin: 0;
+}
+
+/* Contact */
+
+#contact .email {
+	font-size: 1.25rem;
+}
+
+#contact .links {
+	margin-top: 1.5rem;
+	display: flex;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+	font-size: 0.9375rem;
+}
+
+/* Footer */
+
+.site-footer {
+	border-top: 1px solid var(--hairline);
+	padding: 2.5rem 0;
+}
+
+.site-footer .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.site-footer .links {
+	display: flex;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.site-footer a {
+	color: var(--ink);
+	text-decoration: none;
+	font-size: 0.9375rem;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+	color: var(--accent);
+}
+
+.site-footer .copyright {
+	color: var(--ink-muted);
+	font-size: 0.875rem;
+}
+
+@media (max-width: 30rem) {
+	.site-footer .container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
